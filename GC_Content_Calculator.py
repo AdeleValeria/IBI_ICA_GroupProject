@@ -16,3 +16,26 @@ Write a function that computes the GC content (in % of total bases) for any user
 sequence. 
 """
 
+
+B=input("give me a sequence of DNA:\n")
+S=list(B)
+#count 
+a=0
+t=0
+c=0
+g=0
+for i in S:
+    if i == "A":
+        a=a+1
+        #a+=1
+    elif i == "T":
+        t=t+1
+    elif i == "C":
+        c=c+1
+    elif i == "G":
+        g=g+1
+    else:
+        print("The sequence is wrong.")
+#print
+z = (g+c)/(len(S))*100
+print("The proportion of G and C in the DNA sequence is", int(z), "%")
