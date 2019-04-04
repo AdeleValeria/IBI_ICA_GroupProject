@@ -5,3 +5,7 @@ What will those functions need to do?
 Who of you will do what when? 
 What skills/tools will you need? 
 What questions do you have? 
+
+Additional function ideas:
+1. Finding the restriction enzyme sites, cut them and combine to plasmid.
+2. Looking at a DNA sequence, translate it to protein and check if it is a membrane protein.
