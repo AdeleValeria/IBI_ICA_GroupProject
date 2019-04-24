@@ -26,19 +26,7 @@ newnewlist=[]
 for j in range(0, len(newlist)):
     s=newlist[j][n:len(newlist[j])-m-t]
     newnewlist.append(s)
-dict={}
-for key in newnewlist:
-    if key in dict.keys():
-        dict[key]+=1
-    else:
-        dict[key]=1
-print(dict)
-LL=tuple(dict.keys())
-print(LL[1])
-
-#for key,value in dict.items():
-#    print(key)
-#LL=dict.item()
-#print(LL)
 counter=Counter(newnewlist)
-print(counter)
+L=tuple(counter.keys())
+for z in range(0,len(L)):
+    print(L[z],counter[L[z]]/len(newnewlist)*100 , "%")
