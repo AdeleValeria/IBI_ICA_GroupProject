@@ -9,3 +9,17 @@ Write a function that computes the complementary DNA strand (from 5’ to 3’) 
 DNA sequence (assuming the user has also specified it 5’ to 3’)
 """
 
+s = input("DNA sequence: ")
+re=s[::-1]
+c=""
+
+for i in re:
+    if i == 'A':
+        c=c+'T'
+    elif i=='G':
+        c=c+'C'
+    elif i=='T':
+        c=c+'A'
+    elif i=='C':
+        c=c+'G'
+print(c)

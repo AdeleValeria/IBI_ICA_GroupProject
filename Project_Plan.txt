@@ -1,7 +1,34 @@
 PROJECT PLAN
 
 What functions will you need? 
+
 What will those functions need to do?
-Who of you will do what when? 
-What skills/tools will you need? 
+
+Who of you will do what when?  
+
+What skills/tools will you need?
+ 
 What questions do you have? 
+
+Additional function ideas:
+1. Finding the restriction enzyme sites, cut them and combine to plasmid. 
+According to the formative session, it is recommended to use this idea. 
+
+2. Looking at a DNA sequence, translate it to protein and check if it is a membrane protein.
+
+Show that we have successfully complete all the tasks + the 'major' things we have done.
+Marking criteria
+Clear structure
+The problems we are solving
+The approach
+The result is complete
+Visual aid
+Teamwork (1)
+Software demo
+Oral presentation
+Teamwork (2)
+
+The poster should be able to be read from 1.5 metres distance.
+Use PowerPoint or Adobe Illustrator to design the poster. 
+
+
