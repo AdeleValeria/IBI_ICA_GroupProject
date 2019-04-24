@@ -1,0 +1,7 @@
+GC content: GC content is the percentage of either guanine or cytosine nucleotides in part of a DNA or the whole genome. Between guanine and cytosine, there are three hydrogen bonds while between adenine and thymine
+
+Task3: Write a function that computes the mRNA sequence from any user-specified DNA sequence
+
+Approach: First, we get a DNA input from a user. For each deoxynucleotide in the DNA, we add the corresponding nucleotide to a new string which will become the output in the end.
+
+Result: a string of RNA sequence
