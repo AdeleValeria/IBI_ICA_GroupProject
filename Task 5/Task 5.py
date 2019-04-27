@@ -30,3 +30,6 @@ counter=Counter(newnewlist)
 L=tuple(counter.keys())
 for z in range(0,len(L)):
     print(L[z],counter[L[z]]/len(newnewlist)*100 , "%")
+    
+
+       
