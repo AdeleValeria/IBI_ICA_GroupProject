@@ -1,0 +1,29 @@
+Task 3
+
+Explain the problem and biological importance:
+The genetic information stored in DNA cannot be directly converted into proteins as the cellular protein factory ¨C ribosomes only read instruction in the form of RNA. Therefore, a Central Dogma process known as transcription is important for converting the sequences of bases in DNA into RNA messages. 
+
+The approach you took:
+    1. Request user input of DNA sequence.
+    2. Complimentary base-pairing. Replace A to U, C to G, G to C and T to A.
+    3. For each deoxynucleotide in DNA, add its complimentary base to a string variable. 
+
+The result:
+Show the mRNA sequence inside the string variable to the screen. 
+
+
+Task 4
+
+Explain the problem and biological importance:
+Translation, the second step of the Central Dogma converts sequences of bases in mRNA into chains of amino acids or proteins.
+
+The approach you took
+    1. Request user input of mRNA sequence.
+    2. Continue the process if the input only contains the letters: A, U, G and C.
+    3. Return the index position of the first occurrence of AUG.
+    4. To loop through the mRNA sequence and access 3 elements at the same time, use for in range with step size of 3. The 3 elements will form a codon.
+    5. Retrieve the amino acid 1-letter code of the codon from a dictionary.
+    6. For each codon in mRNA, add its 1-letter code to a string variable.
+
+The result:
+Show the amino acids sequence in the string variable to the screen. 
