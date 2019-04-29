@@ -1,2 +1,12 @@
-In DNA replication, each strand of a DNA serves as a template to produce an identical replica of original DNA. This is because DNA is a double helix of two complementary strands. If we have one stand of DNA sequence, we can know what its complementary DNA strand looks like by the principle of complementary base pairing.
-In task 2, we computed the complementary DNA strand for a DNA sequence given by user. We first reversed the given sequence. Then we counted each base from the beginning of the reversed DNA sequence to find its complementary base and used all the complementary bases to form a new sequence which was the complementary DNA sequence of the given one. 
+Task 2
+
+Explain the problem and biological importance:
+DNA is a double helix of two complementary strands. In DNA replication, each strand of a DNA serves as a template to produce an identical replica of the original DNA.  If we have one stand of DNA sequence, we can know what its complementary DNA strand looks like by the principle of complementary base pairing.
+
+The approach you took:
+1. Use a for loop to compute each base from the beginning of the given DNA sequence to find its complementary base.
+2. Use all the complementary bases to form a new sequence.
+3. Reverse the given sequence.
+
+The result:
+The complementary DNA strand for a DNA sequence(from 5' to 3') given by user. 
