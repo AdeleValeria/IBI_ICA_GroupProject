@@ -5,17 +5,17 @@ The genetic information stored in DNA cannot be directly converted into proteins
 
 The approach you took:
     1. Request user input of DNA sequence.
-    2. Complimentary base-pairing. Replace A to U, C to G, G to C and T to A.
+    2. Compute complementary base-pairing: A to U, C to G, G to C and T to A.
     3. For each deoxynucleotide in DNA, add its complimentary base to a string variable. 
 
 The result:
-Show the mRNA sequence inside the string variable to the screen. 
+Print the mRNA sequence. 
 
 
 Task 4
 
 Explain the problem and biological importance:
-Translation, the second step of the Central Dogma converts sequences of bases in mRNA into chains of amino acids or proteins.
+Translation, one of the steps in Central Dogma converts sequences of bases in mRNA into chains of amino acids.
 
 The approach you took
     1. Request user input of mRNA sequence.
