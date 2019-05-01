@@ -12,10 +12,28 @@ stop codon.
 
 #------------------------------------------------------------------------------
 import re
-S=''
-mRNA = input('input the mRNA sequence:')
-if re.match(r'[^AUGC]+$',mRNA):
-   mRNA = input('It is an invalid mRNA sequence,please input again:')
+def detect(mRNA):
+    if re.match(r'[AUGC]+$',mRNA):
+       quit
+    else:
+        mRNA = input('It is an invalid mRNA sequence,please input again:')
+        detect(mRNA)
+        
+def start (mRNA):
+    global start_index
+    if re.search('AUG',mRNA):
+       start_index = mRNA.index('AUG')
+    else:
+        mRNA = input('Please input the correct mRNA sequence with a start codon:')
+        start(mRNA)  
+        
+def stop (mRNA):
+    mRNA = input('Please input the correct mRNA sequence with a stop codon:')
+    mRNA_protein()    
+mRNA = ''
+start_index = 0
+amino_acid=''
+sequence=''  
 AA = {'U':{'U':{'U':'F','C':'F','A':'L','G':'L'},
            'C':{'U':'S','C':'S','A':'S','G':'S'},
            'A':{'U':'Y','C':'Y','A':' ','G':' '},
@@ -31,42 +49,23 @@ AA = {'U':{'U':{'U':'F','C':'F','A':'L','G':'L'},
       'G':{'U':{'U':'V','C':'V','A':'V','G':'V'},
            'C':{'U':'A','C':'A','A':'A','G':'A'},
            'A':{'U':'D','C':'D','A':'E','G':'E'},
-           'G':{'U':'G','C':'G','A':'G','G':'G'}}}
-if re.search('AUG',mRNA):
-   m= mRNA.index('AUG')
-   for i in range (m,len(mRNA),3):
-       P=AA[mRNA[i]][mRNA[i+1]][mRNA[i+2]]
-       if P == ' ':
-           break
-       else: 
-           S += P
-   print('The amino acid sequence is:',S)
-else:
-   mRNA = input('Please input the correct mRNA sequence with a start codon:')
-   #successfully added the judgement of the existence of a start codon
+           'G':{'U':'G','C':'G','A':'G','G':'G'}}} 
+def mRNA_protein ():
+    global sequence
+    detect (mRNA)
+    start (mRNA)
+    for i in range (start_index,len(mRNA),3):
+        if i <= len(mRNA)-3:
+           amino_acid = AA[mRNA[i]][mRNA[i+1]][mRNA[i+2]]
+           if amino_acid != ' ' and i<len(mRNA)-3:
+              sequence += amino_acid
+           elif amino_acid !=' ' and i == len(mRNA)-3:
+                stop(mRNA)
+           else:
+               break
+        else:
+            stop(mRNA)
+    print('The protein sequence is:',sequence)   
 
-#------------------------------------------------------------------------------
-#try to use 'def'
-# try to test whether there is a stop codon.
-mRNA = ''
-start_index = int()
-amino_acid=''
-sequence=''   
-def mRNA_protein (mRNA, start_index,amino_acid,sequence):
-    mRNA = input('input the mRNA sequence:')
-    if re.match(r'[^AUGC]+$',mRNA):
-       mRNA = input('It is an invalid mRNA sequence,please input again:')
-       if re.search('AUG',mRNA):
-          start_index = mRNA.index('AUG')#return the index of 'A'
-          for i in range (start_index,len(mRNA),3):
-              amino_acid = AA[mRNA[i]][mRNA[i+1]][mRNA[i+2]]
-              if amino_acid == ' ':
-                 break
-              elif i >=len(mRNA)-3 and amino_acid != ' ':
-                   mRNA = input('Please input the correct mRNA sequence with a stop codon:')
-              else:
-                  sequence += amino_acid
-              print(S)
-    else:
-        mRNA = input('Please input the correct mRNA sequence with a start codon:')
-mRNA_protein(mRNA, start_index,amino_acid,sequence)               
+mRNA = input('input the mRNA sequence:')
+mRNA_protein()             
