@@ -38,9 +38,10 @@ def stop (mRNA):
     mRNA_protein() 
 def again():
     task = input('Please select the task you want to do:\n 1. GC content claculator\n 2. Complementary DNA strand calculator\n 3. DNA to mRNA convertor (transcription)\n 4. mRNA to protein (translation)\n 5. effective motif analysis\n 6. quit\n') 
-    task()    
-task = input('Please select the task you want to do:\n 1. GC content claculator\n 2. Complementary DNA strand calculator\n 3. DNA to mRNA convertor (transcription)\n 4. mRNA to protein (translation)\n 5. effective motif analysis\n')     
-def task():    
+    tasks(task)    
+task = input('Please select the task you want to do:\n 1. GC content claculator\n 2. Complementary DNA strand calculator\n 3. DNA to mRNA convertor (transcription)\n 4. mRNA to protein (translation)\n 5. effective motif analysis\n')   
+ 
+def tasks(task):    
 #---------------------------------task1----------------------------------------
     if task == '1':            
         DNA=input("Please input the DNA sequence:\n")
@@ -77,7 +78,7 @@ def task():
                  Complementary += 'G'
         Complementary_sequence=Complementary[::-1]
         print('The complementary DNA sequence (5’ to 3’):', Complementary_sequence)
-         again()
+        again()
     #---------------------------------task3----------------------------------------
     elif task == '3':
         def Translation(seq):
@@ -185,8 +186,9 @@ def task():
         plt.show()
         again()
     elif task == '6':
-        print('THank you for using!')
-         quit
+        print('Thank you for using!')
+        quit
     else:
         task = input('Please input a valid number:\n 1. GC content claculator\n 2. Complementary DNA strand calculator\n 3. DNA to mRNA convertor (transcription)\n 4. mRNA to protein (translation)\n 5. effective motif analysis\n') 
-        task()          
+        tasks(task)   
+tasks(task)
