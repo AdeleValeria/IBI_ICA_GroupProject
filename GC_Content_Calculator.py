@@ -17,25 +17,22 @@ sequence.
 """
 
 
-B=input("give me a sequence of DNA:\n")
+DNA=input("Please input the DNA sequence:\n")
+
 S=list(B)
 #count 
-a=0
-t=0
-c=0
-g=0
+A=0, T=0, C=0,G=0
 for i in S:
     if i == "A":
-        a=a+1
+        A=A+1
         #a+=1
     elif i == "T":
-        t=t+1
+        T=T+1
     elif i == "C":
-        c=c+1
+        C=C+1
     elif i == "G":
-        g=g+1
-    else:
-        print("The sequence is wrong.")
+        G=G+1
+
 #print
 z = (g+c)/(len(S))*100
 print("The proportion of G and C in the DNA sequence is", int(z), "%")
