@@ -1,4 +1,14 @@
 Task 1
+New version:
+GC content is the percentage of Guanine and Cytosine nucleotides in a DNA sequence. In comparison with Adenine-Thymine (A-T) base pairs which contain only two hydrogen bonds, Guanine and Cytosine (G-C) form three bonds. Therefore, G-C pairs contribute greater DNA stability than A-T, making the stability and melting temperature of DNA depend on the GC content. In polymerase chain reaction (PCR), GC content can also be used to predict annealing temperature of primers to the template DNA which is important to the efficiency and specificity of the experiments. 
+
+Step 1: Use a for-loop to count the number of Guanine and Cytosine in a DNA sequence given by the user. 
+Step 2: Divide the number of Guanine and Cytosine by the length of the DNA sequence, then multiply by 100 to calculate the percentage.   
+ 
+The result:
+The percentage of GC content.
+
+
 
 Explain the problem and biological importance:
 GC content is the percentage of Guanine and Cytosine nucleotides in part of a DNA. Between Guanine and Cytosine, there are three hydrogen bonds while Adenine-Thymine base pairs have only two. This means that Guanine-Cytosine base pairs contribute more to DNA stability than Adenine-Thymine base pairs. Therefore, the stability and melting temperature of DNA depend on the GC content. In polymerase chain reaction (PCR) experiments, GC content can also be used to predict annealing temperature of primers to the template DNA. 
@@ -9,3 +19,4 @@ The approach you took:
   
 The result:
 The percentage of the GC content.
+

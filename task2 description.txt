@@ -1,5 +1,19 @@
 Task 2
 
+New version:
+DNA is a double helix made of two antiparallel strands and linked by complementary base pairing between A-T and C-G. In DNA replication, each strand serves as a template to produce an identical replica of the original DNA. If the sequence of bases in one strand of DNA is known, the principle of complementary base pairing can be used to determine the sequence of bases in the corresponding strand. 
+
+Step 1: Use a for-loop to determine the complementary base of each nucleotide base in the given DNA sequence. 
+Step 2: Form a new sequence consisting of all the complementary bases. 
+Step 3: Reverse the sequence to fulfill the antiparallel orientation requirement. 
+
+
+The result:
+The complementary strand of the DNA sequence(from 5' to 3') given by the user.
+
+
+
+Old version:
 Explain the problem and biological importance:
 DNA is a double helix of two complementary strands. In DNA replication, each strand of a DNA serves as a template to produce an identical replica of the original DNA.  If we have one stand of DNA sequence, we can know what its complementary DNA strand looks like by the principle of complementary base pairing.
 

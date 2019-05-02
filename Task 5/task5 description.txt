@@ -1,0 +1,6 @@
+introduction里面要包括这几部分：【1】利用病毒载体（如aav）来实现组织特异性药物递送是基因治疗的核心内容之一 【2】构建随机文库并结合高通量测序的方法，可以用于筛选组织特异性的aav 【3】高通量测序的结果分析，例如淘汰因为机器原因而产生的错误序列、在筛选过程中引入的pcr假阳性、利用算法分析得到真正富集的序列，是筛选获得高效、特异性的病毒载体中关键一环。
+Virus vectors such as AAV are commonly used for tissue-specific drug delivery in gene therapy. In order to screen the tissue specificity of different motif in proteins of the virus, a library with same length of amino acid sequence with a 1aa shifting sliding window is usually created. Based on the library, DNA molecules were synthesized, attached with primers as well as barcode sequence (UMI), underwent PCR and finally sequenced by next-generation sequencing (NGS). The process above is repeated Our code is used to analyze the result of NGS, dealing with the result of sequencing to find out effective domains for tissue penetration. 
+Step 1: delete the sequence with same UMI (decrease the error caused by PCR preference).
+Step 2: Extract and align interested sequence segments by comparing to a reference sequence.
+Step 3: Take count of the repeated times of certain sequence and create plots to detect functional motifs of proteins. 
+
