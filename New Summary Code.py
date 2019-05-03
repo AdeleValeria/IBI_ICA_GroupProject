@@ -3,7 +3,7 @@
 """
 Created on Mon Apr 29 20:35:36 2019
 
-@author: Group 2
+@author: Group 2 (Adele, Alana, Ashley, Cici and Pan Hobing)
 """
 import re
 
@@ -35,8 +35,20 @@ def task1(DNA):
             G += 1
     #GC formula
     P = (G+C)/(len(DNA))*100
-    print("The proportion of Guanine-Cytosine base pairs in the DNA sequence is", P, "%")
+    print("The proportion of Guanine-Cytosine base pairs in the DNA sequence is", "%.2f" % P, "%")
+    
+    #Pie chart
+    import matplotlib.pyplot as plt
+    label = 'AT','GC'
+    sizes = [A+T, G+C]
+    #To offset a slice
+    colors = ['cyan', 'pink']
+    #autopct to determine how the percentage is shown. 1f%% means 1 number after the decimal.
+    plt.pie(sizes, labels=label, autopct='%1.1f%%', shadow=True, startangle=90, colors=colors)
+    plt.axis('equal')
+    plt.show()
     return
+
 
 def task2(DNA):
     Complementary=""
@@ -50,7 +62,6 @@ def task2(DNA):
             Complementary += 'C'
         elif i=='C':
             Complementary += 'G'
-    print(Complementary)
     #To reverse the sequence to make it antiparallel
     Complementary_sequence=Complementary[::-1]
     print('The complementary DNA sequence (5’ to 3’):', Complementary_sequence) 
@@ -190,7 +201,7 @@ def task5():
 def task6():
     print("We are Adele, Alana, Ashley, Cici and Pan Hobing,")
     print("first year Biomedical Informatics students at ZJU-UoE Institute.")
-    print('Thank you for using our program!')
+    print('Thank you for using our programs!')
     return
     
 #main menu where the users can choose which program they want to run
