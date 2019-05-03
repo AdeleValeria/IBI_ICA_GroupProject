@@ -1,5 +1,15 @@
 Task 3
 
+New version:
+The genetic information stored in DNA cannot be directly converted into proteins as the cellular protein factory (ribosomes) only read the instruction in the form of RNA. Although RNA is chemically similar to DNA, it contains Uracil instead of Thymine. A Central Dogma process known as transcription is important for converting the sequence of bases in DNA into RNA message.
+
+Step 1: Use a for-loop to determine the complementary mRNA base of each DNA base given by the user: A-U and G-C. 
+Step 2: Form an mRNA sequence by adding all the complementary bases of the DNA sequence. 
+
+The result:
+Print the mRNA sequence. 
+
+Old version:
 Explain the problem and biological importance:
 The genetic information stored in DNA cannot be directly converted into proteins as the cellular protein factory ¨C ribosomes only read instruction in the form of RNA. Therefore, a Central Dogma process known as transcription is important for converting the sequences of bases in DNA into RNA messages. 
 
@@ -14,6 +24,19 @@ Print the mRNA sequence.
 
 Task 4
 
+Translation, one of the steps in Central Dogma converts a sequence of mRNA bases into a chain of amino acids. A group of 3 mRNA bases called codon encodes for a specific amino acid. Codon can also signal the beginning (start codon) and end (stop codon) of the translation.
+
+Step 1: Return the index position to the first occurrence of AUG. 
+Step 2: Use a for-in-range loop with a step size of 3 to loop through the mRNA sequence and access 3 elements at the same time. 
+Step 3: If the codon encodes an amino acid, its 1-letter-code will be retrieved from the dictionary and used to form a new sequence of amino acids. 
+Step 5: If the codon signals stop, the loop will terminate and print out the sequence of amino acids.
+Step 6: If there is no start and or stop codon, an error message will appear.
+
+The result:
+Print the sequence of amino acids. 
+
+
+Old version:
 Explain the problem and biological importance:
 Translation, one of the steps in Central Dogma converts sequences of bases in mRNA into chains of amino acids.
 
