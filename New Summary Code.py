@@ -103,13 +103,8 @@ def task4(mRNA):
            start_index = mRNA.index('AUG')
         else:
             print("error: no start codon found")
-            main_menu
-        return
+            return False
             
-    def stop(mRNA):
-        print("error: no stop codon found")
-        main_menu()
-        return
         
     amino_acid=''
     sequence=''
@@ -132,7 +127,8 @@ def task4(mRNA):
                'G':{'U':'G','C':'G','A':'G','G':'G'}}} 
 
     if detect (mRNA) == True:
-        start (mRNA)
+        if start (mRNA) == False:
+            return
         #Use step size 3 to loop through the sequence and access 3 elements at the same time
         for i in range (start_index,len(mRNA),3):
             if i <= len(mRNA)-3:
@@ -144,11 +140,14 @@ def task4(mRNA):
                   sequence += amino_acid
                 #To check if the sequence contains stop codon
                elif amino_acid !=' ' and i == len(mRNA)-3:
-                    stop(mRNA)
+                    print("error: no stop codon found")
+                    return
                else:
                    break
             else:
-                stop(mRNA)
+                print("error: no stop codon found")
+                return
+            
         print('The protein sequence is:',sequence)   
 
 def task5():
