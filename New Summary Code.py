@@ -170,12 +170,10 @@ def task5():
     for i in range(1,len(list)):
         if list[i] not in newlist:
             newlist.append(list[i])
-    print(newlist)            
     newnewlist=[]
     for j in range(0, len(newlist)):
         s=newlist[j][n:len(newlist[j])-m-t]
         newnewlist.append(s)
-    print(newnewlist)
     abc=[]
     for i in range(0,len(reference)-target+1):
         for j in newnewlist:
