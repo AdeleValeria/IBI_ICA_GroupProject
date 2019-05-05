@@ -194,7 +194,7 @@ def task5():
     plt.bar(con,means,width, color = 'lightgrey')
     plt.xticks(con,(L))
     plt.ylabel('amount')
-    plt.title('Affinity of different DNA domains')
+    plt.title('Tissue penetration capacity of different domains')
     plt.show()
     return
 
