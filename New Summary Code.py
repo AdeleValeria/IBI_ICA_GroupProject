@@ -90,8 +90,9 @@ def task4(mRNA):
         if re.match(r'[AUGC]+$',mRNA):
             return True
         else:
-            print("it is an invalid mRNA sequence")
-            main_menu()
+            mRNA = input("Please re-enter the mRNA sequence:\n")
+            #repeat the function
+            task4(mRNA)
         return
   
     #To check if the sequence contains start codon
@@ -102,7 +103,8 @@ def task4(mRNA):
             #return the index position to the first occurrence of AUG 
            start_index = mRNA.index('AUG')
         else:
-            print("error: no start codon found")
+            mRNA = input("Please re-enter the mRNA sequence with a start codon:\n")
+            task4(mRNA)
             return False
             
         
