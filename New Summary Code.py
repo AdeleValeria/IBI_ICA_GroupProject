@@ -3,7 +3,7 @@
 """
 Created on Mon Apr 29 20:35:36 2019
 
-@author: Group 2 (Adele, Alana, Ashley, Cici and Pan Hobing)
+@author: Group 2 (Adele, Alana, Ashley, Cici and Pan Hongbing)
 """
 import re
 
@@ -199,7 +199,7 @@ def task5():
     return
 
 def task6():
-    print("We are Adele, Alana, Ashley, Cici and Pan Hobing,")
+    print("We are Adele, Alana, Ashley, Cici and Pan Hongbing,")
     print("first year Biomedical Informatics students at ZJU-UoE Institute.")
     print('Thank you for using our programs!')
     return
