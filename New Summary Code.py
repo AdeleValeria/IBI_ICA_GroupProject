@@ -13,10 +13,7 @@ def detect_DNA(DNA):
     if re.match(r'[ATGC]+$',DNA):
         return True
     else:
-        print('It is an invalid DNA sequence')
-        #if invalid sequence, the main_menu option will show again
-        main_menu()
-        return    
+        return False   
 
 def task1(DNA):
     A=0
@@ -35,7 +32,7 @@ def task1(DNA):
             G += 1
     #GC formula
     P = (G+C)/(len(DNA))*100
-    print("The proportion of Guanine-Cytosine base pairs in the DNA sequence is", "%.2f" % P, "%")
+    print("The proportion of Guanine-Cytosine base pairs in the DNA sequence:", "%.2f" % P, "%")
     
     #Pie chart
     import matplotlib.pyplot as plt
@@ -79,7 +76,7 @@ def task3(DNA):
             mRNA +='C'
         elif i=='C':
             mRNA +='G'
-    print('The mRNA sequence is:', mRNA)
+    print('The mRNA sequence:', mRNA)
     return
 
 
@@ -90,7 +87,7 @@ def task4(mRNA):
         if re.match(r'[AUGC]+$',mRNA):
             return True
         else:
-            mRNA = input("Please re-enter the mRNA sequence:\n")
+            mRNA = input("Please re-enter a valid mRNA sequence:\n")
             #repeat the function
             task4(mRNA)
         return
@@ -103,7 +100,7 @@ def task4(mRNA):
             #return the index position to the first occurrence of AUG 
            start_index = mRNA.index('AUG')
         else:
-            mRNA = input("Please re-enter the mRNA sequence with a start codon:\n")
+            mRNA = input("Please re-enter an mRNA sequence with a start codon:\n")
             task4(mRNA)
             return False
             
@@ -142,15 +139,17 @@ def task4(mRNA):
                   sequence += amino_acid
                 #To check if the sequence contains stop codon
                elif amino_acid !=' ' and i == len(mRNA)-3:
-                    print("error: no stop codon found")
+                    mRNA = input("Please enter an mRNA sequence with a stop codon:\n")
+                    task4(mRNA)
                     return
                else:
                    break
             else:
-                print("error: no stop codon found")
+                mRNA = input("Please enter an mRNA sequence with a stop codon:\n")
+                task4(mRNA)
                 return
             
-        print('The protein sequence is:',sequence)   
+        print('The protein sequence:',sequence)   
 
 def task5():
     from collections import Counter
@@ -208,24 +207,33 @@ def task6():
 #main menu where the users can choose which program they want to run
 def main_menu():
     #The list of options 
-    task = input('Please select the task you want to do:\n 1. GC content claculator\n 2. Complementary DNA strand calculator\n 3. DNA to mRNA convertor (transcription)\n 4. mRNA to protein (translation)\n 5. effective motif analysis\n 6. about us\n') 
+    task = input('Please select the task:\n 1. GC content calculator\n 2. Complementary DNA strand calculator\n 3. DNA to mRNA converter (transcription)\n 4. mRNA to protein (translation)\n 5. Effective motif analysis\n 6. About us\n') 
     if task == '1':   
-        DNA=input("Please input the DNA sequence:\n")
+        DNA=input("Please input a DNA sequence:\n")
         if detect_DNA(DNA) == True:
             task1(DNA)
-            main_menu()
+        while detect_DNA(DNA) == False:
+            DNA=input("Please re-enter a valid DNA sequence:\n")
+        task1(DNA)
+        main_menu()
     elif task == '2':
-        DNA=input("Please input the DNA sequence (5’ to 3’):\n")
+        DNA=input("Please input a DNA sequence (5’ to 3’):\n")
         if detect_DNA(DNA) == True:
             task2(DNA)
-            main_menu()
+        while detect_DNA(DNA) == False:
+            DNA=input("Please re-enter a valid DNA sequence:\n")
+        task2(DNA)
+        main_menu()
     elif task == '3':
-        DNA=input("Please input the DNA sequence (5’ to 3’):\n")
+        DNA=input("Please input a DNA sequence (5’ to 3’):\n")
         if detect_DNA(DNA) == True:
             task3(DNA)
-            main_menu()
+        while detect_DNA(DNA) == False:
+            DNA=input("Please re-enter a valid DNA sequence:\n")
+        task3(DNA)
+        main_menu()
     elif task == '4':
-        mRNA = input("Please input the mRNA sequence:\n")
+        mRNA = input("Please input an mRNA sequence:\n")
         task4(mRNA)
         main_menu()
     elif task == '5':
