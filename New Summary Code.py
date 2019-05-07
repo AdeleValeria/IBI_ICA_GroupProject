@@ -212,7 +212,7 @@ def main_menu():
             task1(DNA)
         while detect_DNA(DNA) == False:
             DNA=input("Please re-enter a valid DNA sequence:\n")
-        task1(DNA)
+            task1(DNA)
         main_menu()
     elif task == '2':
         DNA=input("Please input a DNA sequence (5’ to 3’):\n")
@@ -220,7 +220,7 @@ def main_menu():
             task2(DNA)
         while detect_DNA(DNA) == False:
             DNA=input("Please re-enter a valid DNA sequence:\n")
-        task2(DNA)
+            task2(DNA)
         main_menu()
     elif task == '3':
         DNA=input("Please input a DNA sequence (5’ to 3’):\n")
@@ -228,7 +228,7 @@ def main_menu():
             task3(DNA)
         while detect_DNA(DNA) == False:
             DNA=input("Please re-enter a valid DNA sequence:\n")
-        task3(DNA)
+            task3(DNA)
         main_menu()
     elif task == '4':
         mRNA = input("Please input an mRNA sequence:\n")
