@@ -16,68 +16,81 @@ def detect_DNA(DNA):
         return False   
 
 def task1(DNA):
-    A=0
-    T=0
-    C=0
-    G=0
-    for i in DNA:
+    if detect_DNA(DNA):
+        A=0
+        T=0
+        C=0
+        G=0
+        for i in DNA:
         #To count the number of each base in a given sequence
-        if i == "A":
-            A += 1
-        elif i == "T":
-            T += 1
-        elif i == "C":
-            C += 1
-        elif i == "G":
-            G += 1
+            if i == "A":
+                A += 1
+            elif i == "T":
+                T += 1
+            elif i == "C":
+                C += 1
+            elif i == "G":
+                G += 1
     #GC formula
-    P = (G+C)/(len(DNA))*100
-    print("The proportion of Guanine-Cytosine base pairs in the DNA sequence:", "%.2f" % P, "%")
-    
+        P = (G+C)/(len(DNA))*100
+        print("The proportion of Guanine-Cytosine base pairs in the DNA sequence:", "%.2f" % P, "%")
+        
+        import matplotlib.pyplot as plt
+        label = 'AT','GC'
+        sizes = [A+T, G+C]
+        #To offset a slice
+        colors = ['cyan', 'pink']
+        #autopct to determine how the percentage is shown. 1f%% means 1 number after the decimal.
+        plt.pie(sizes, labels=label, autopct='%1.1f%%', shadow=True, startangle=90, colors=colors)
+        plt.axis('equal')
+        plt.show()
+        return
+    else:
+        DNA=input("Please re-enter a valid DNA sequence:\n")
+        task1(DNA)
     #Pie chart
-    import matplotlib.pyplot as plt
-    label = 'AT','GC'
-    sizes = [A+T, G+C]
-    #To offset a slice
-    colors = ['cyan', 'pink']
-    #autopct to determine how the percentage is shown. 1f%% means 1 number after the decimal.
-    plt.pie(sizes, labels=label, autopct='%1.1f%%', shadow=True, startangle=90, colors=colors)
-    plt.axis('equal')
-    plt.show()
-    return
+    
 
 
 def task2(DNA):
-    Complementary=""
-    for i in DNA:
+    if detect_DNA(DNA):
+        Complementary=""
+        for i in DNA:
         #remember the principle of DNA base pairing: A-T and C-G
-        if i == 'A':
-            Complementary += 'T'
-        elif i=='T':
-            Complementary += 'A'
-        elif i=='G':
-            Complementary += 'C'
-        elif i=='C':
-            Complementary += 'G'
+            if i == 'A':
+                Complementary += 'T'
+            elif i=='T':
+                Complementary += 'A'
+            elif i=='G':
+                Complementary += 'C'
+            elif i=='C':
+                Complementary += 'G'
     #To reverse the sequence to make it antiparallel
-    Complementary_sequence=Complementary[::-1]
-    print('The complementary DNA sequence (5’ to 3’):', Complementary_sequence) 
-    return
+        Complementary_sequence=Complementary[::-1]
+        print('The complementary DNA sequence (5’ to 3’):', Complementary_sequence) 
+        return
+    else:
+        DNA=input("Please re-enter a valid DNA sequence:\n")
+        task2(DNA)
 
 def task3(DNA):
-    mRNA=""
-    for i in DNA:
+    if detect_DNA(DNA):
+        mRNA=""
+        for i in DNA:
         #in RNA, no T, but U
-        if i == 'A':
-            mRNA += 'U'
-        elif i=='T':
-            mRNA +='A'
-        elif i=='G':
-            mRNA +='C'
-        elif i=='C':
-            mRNA +='G'
-    print('The mRNA sequence:', mRNA)
-    return
+            if i == 'A':
+                mRNA += 'U'
+            elif i=='T':
+                mRNA +='A'
+            elif i=='G':
+                mRNA +='C'
+            elif i=='C':
+                mRNA +='G'
+        print('The mRNA sequence:', mRNA)
+        return
+    else:
+        DNA=input("Please re-enter a valid DNA sequence:\n")
+        task3(DNA)
 
 
 def task4(mRNA): 
@@ -208,27 +221,15 @@ def main_menu():
     task = input('Please select the task:\n 1. GC content calculator\n 2. Complementary DNA strand calculator\n 3. DNA to mRNA converter (transcription)\n 4. mRNA to protein (translation)\n 5. Effective motif analysis\n 6. About us\n') 
     if task == '1':   
         DNA=input("Please input a DNA sequence:\n")
-        if detect_DNA(DNA) == True:
-            task1(DNA)
-        while detect_DNA(DNA) == False:
-            DNA=input("Please re-enter a valid DNA sequence:\n")
-            task1(DNA)
+        task1(DNA)
         main_menu()
     elif task == '2':
         DNA=input("Please input a DNA sequence (5’ to 3’):\n")
-        if detect_DNA(DNA) == True:
-            task2(DNA)
-        while detect_DNA(DNA) == False:
-            DNA=input("Please re-enter a valid DNA sequence:\n")
-            task2(DNA)
+        task2(DNA)
         main_menu()
     elif task == '3':
         DNA=input("Please input a DNA sequence (5’ to 3’):\n")
-        if detect_DNA(DNA) == True:
-            task3(DNA)
-        while detect_DNA(DNA) == False:
-            DNA=input("Please re-enter a valid DNA sequence:\n")
-            task3(DNA)
+        task3(DNA)
         main_menu()
     elif task == '4':
         mRNA = input("Please input an mRNA sequence:\n")
